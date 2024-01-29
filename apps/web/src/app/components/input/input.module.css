@@ -1,0 +1,28 @@
+input {
+    width: 100%;
+    border: 2px solid #2C4A58;
+    border-radius: 4px;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+    padding: 2px;
+}
+
+input:focus {
+    border-color: var(--primary);
+}
+
+.error {
+    padding-top: 4px;
+    padding-left: 4px;
+    font-size: 12px;
+    color: var(--error);
+}
+
+

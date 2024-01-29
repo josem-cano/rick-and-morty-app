@@ -1,0 +1,151 @@
+.root {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    margin: 24px;
+}
+.container {
+    border-radius: 5px;
+    display: flex;
+    padding: 24px;
+    color: white;
+    gap: 12px;
+    background-color: var(--surface);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    max-height: 300px;
+    max-width: 300px;
+}
+.display {
+    box-sizing: border-box;
+    gap: 4px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 200px;
+}
+
+.display > label {
+    font-weight: bold;
+}
+
+
+.infoRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.body {
+    display: flex;
+    flex-direction: column;
+}
+
+.alive {
+    height: 0.75em;
+    width: 0.75em;
+    background-color: #97ce4c;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.deceased {
+    height: 0.75em;
+    width: 0.75em;
+    background-color: #e4a788;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.cardHeader img {
+    height: 2em;
+    margin-right: 2em;
+    filter: invert(91%) sepia(68%) saturate(1951%) hue-rotate(346deg)
+    brightness(98%) contrast(98%);
+    border-radius: 5px;
+}
+
+
+
+
+img {
+    margin: 1em;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+}
+
+.cardActions {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 1em;
+    padding-right: 1em;
+    width: 90%;
+    align-items: flex-end;
+}
+
+.cardContainer {
+    width: 100%;
+}
+
+.cardContainer > p::first-letter {
+    text-transform: capitalize;
+}
+
+.cardContainer > p {
+    font-weight: 300;
+}
+
+.favButton {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #1de9b6;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.favButton:hover {
+    transition: all 0.1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+}
+
+.backButton {
+    margin-top: 1em;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: lightgray;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.backButton:hover {
+    transition: all 0.1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px whitesmoke;
+}

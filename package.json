@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "dotenv -- turbo run dev",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "NODE_ENV=test dotenv -- turbo run test",
+    "migration:generate": "dotenv -- turbo run migration:generate --",
+    "migration:run": "dotenv -- turbo run migration:run",
+    "migration:revert": "dotenv -- turbo run migration:revert",
+    "typecheck": "turbo run typecheck"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.1",
+    "turbo": "latest",
+    "dotenv-cli": "latest"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@9.6.5",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}

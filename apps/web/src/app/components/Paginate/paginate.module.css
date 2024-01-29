@@ -1,0 +1,29 @@
+.container {
+    margin: 4px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+}
+
+.container button {
+    margin: 0.2em;
+    color: black;
+    padding: 8px 16px;
+    border: none;
+}
+
+.active {
+    background-color: rgb(85, 204, 68);
+    color: white;
+}
+
+.container button:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.dots {
+    margin: 0.2em;
+    padding: 8px 16px;
+}

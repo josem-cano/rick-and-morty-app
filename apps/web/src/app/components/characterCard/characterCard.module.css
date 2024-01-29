@@ -1,0 +1,45 @@
+
+.root {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface);
+    overflow: hidden;
+    color: white;
+    min-height: 350px;
+}
+
+.content {
+    padding: 1rem;
+    background: var(--surface);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.header > h3 {
+    margin: 0;
+}
+
+.alive {
+    height: 0.75em;
+    width: 0.75em;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5em;
+}
+
+.deceased {
+    height: 0.75em;
+    width: 0.75em;
+    background-color: var(--error);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 0.5em;
+}

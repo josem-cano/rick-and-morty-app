@@ -14,13 +14,18 @@ const GetCharactersSchema = z.object({
     page: z.coerce.number({
       required_error: "Must pass a page",
     }),
+    name: z.optional(z.string()),
+    type: z.optional(z.string()),
+    species: z.optional(z.string()),
+    status: z.optional(z.enum(["alive", "dead", "unknown"])),
+    gender: z.optional(z.enum(["female", "male", "genderless", "unknown"])),
   }),
 });
 charactersRouter.get("/", async (req, res) => {
   const user = req.user as User;
   try {
     const { query } = await GetCharactersSchema.parseAsync(req);
-    const page = await getCharactersWithFav(user, query.page);
+    const page = await getCharactersWithFav(user, { ...query });
     return res.status(200).json(page);
   } catch (error) {
     if (error instanceof ZodError) {

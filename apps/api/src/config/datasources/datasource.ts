@@ -1,6 +1,6 @@
-import { testDataSource } from "./testDatasource";
-import { mainDataSource } from "./mainDatasource";
+import { testDatasource } from "./test-datasource";
+import { mainDataSource } from "./main-datasource";
 
 export default process.env.NODE_ENV === "test"
-  ? testDataSource
+  ? testDatasource
   : mainDataSource;

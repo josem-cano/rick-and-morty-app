@@ -5,6 +5,7 @@ import { User } from "../entity";
 import { generateJwt } from "../services/auth-service";
 import { formatZodError } from "../utils";
 import datasource from "../config/datasources/datasource";
+import { jwtValidation } from "../middleware/auth";
 
 export const authRouter = Router();
 
@@ -77,4 +78,8 @@ authRouter.post("/login", async (req: Request, res) => {
       res.status(500).json({ message: error });
     }
   }
+});
+
+authRouter.get("/me", jwtValidation, async (req: Request, res) => {
+  return res.status(200).json(req.user);
 });

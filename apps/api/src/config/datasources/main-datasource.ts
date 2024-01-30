@@ -1,5 +1,4 @@
 import { DataSource } from "typeorm";
-import { FavCharacter, User } from "../../entity";
 
 export const mainDataSource = new DataSource({
   type: "postgres",

@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import React from "react";
-import { useAuth } from "../context/auth.context.tsx";
 import { NavBar } from "../components/navbar/navbar.tsx";
+import { useAuth } from "../context/auth.context.tsx";
 
 export function ProtectedRoute() {
   const { user } = useAuth();
@@ -12,7 +12,6 @@ export function ProtectedRoute() {
     return <Navigate to="/login" />;
   }
 
-  // If authenticated, render the child routes
   return (
     <div style={{ height: "100vh" }}>
       <NavBar />

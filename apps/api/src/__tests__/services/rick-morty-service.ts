@@ -23,8 +23,25 @@ describe("Auth Service", () => {
 
   it("Can get characters from api", async () => {
     const user = await TestHelper.getOrCreateUser();
-    const { characters } = await getCharactersWithFav(user, 0);
+    const { characters } = await getCharactersWithFav(user, { page: 0 });
     expect(characters.length).toBe(20);
+  });
+
+  it("Can get characters with filters", async () => {
+    const user = await TestHelper.getOrCreateUser();
+    const { characters } = await getCharactersWithFav(user, {
+      page: 0,
+      status: "alive",
+      gender: "male",
+      name: "Rick",
+    });
+    const doNotMatch = characters.filter(
+      (char) =>
+        char.status !== "Alive" ||
+        char.gender !== "Male" ||
+        !char.name.includes("Rick"),
+    );
+    expect(doNotMatch.length).toBe(0);
   });
 
   it("Can get single character from api", async () => {
@@ -37,7 +54,7 @@ describe("Auth Service", () => {
   it("Characters have 'favourite' property", async () => {
     const user = await TestHelper.getOrCreateUser();
 
-    const { characters } = await getCharactersWithFav(user, 0);
+    const { characters } = await getCharactersWithFav(user, { page: 0 });
     expect(characters[0].favourite).toBe(false);
   });
 

@@ -1,5 +1,5 @@
 import * as jsonwebtoken from "jsonwebtoken";
-import { User } from "../entity/user";
+import { User } from "../entity";
 
 const secret = process.env.JWT_SECRET as string;
 
@@ -11,7 +11,6 @@ export function generateJwt(user: User): string {
       email: user.email,
     },
     secret,
-    { expiresIn: "1h" },
   );
 }
 

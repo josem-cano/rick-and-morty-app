@@ -11,9 +11,9 @@
     "lint": "eslint src/",
     "test": "jest --coverage=true",
     "typeorm": "npm run build && npx typeorm -d dist/config/datasources/datasource.js",
-    "migration:generate": "npx typeorm -d dist/config/datasources/datasource.js migration:generate",
-    "migration:run": "npx typeorm -d dist/config/datasources/datasource.js migration:run",
-    "migration:revert": "npx typeorm -d dist/config/datasources/datasource.js migration:revert"
+    "migration:generate": "npm run build && npx typeorm -d dist/config/datasources/datasource.js migration:generate ",
+    "migration:run": "npm run build && npx typeorm -d dist/config/datasources/datasource.js migration:run",
+    "migration:revert": "npm run build && npx typeorm -d dist/config/datasources/datasource.js migration:revert"
   },
   "jest": {
     "preset": "@repo/jest-presets/jest/node"

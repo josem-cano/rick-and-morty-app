@@ -32,13 +32,4 @@ describe("Auth Service", () => {
       email: user.email,
     });
   });
-
-  it("Token has expiration", async () => {
-    const user = await TestHelper.getOrCreateUser();
-
-    const jwt = generateJwt(user);
-    const payload = validateJwt(jwt) as JwtPayload;
-
-    expect(payload.exp).toBeDefined();
-  });
 });

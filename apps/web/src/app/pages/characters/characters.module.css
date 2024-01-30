@@ -2,10 +2,15 @@
     box-sizing: border-box;
     height: calc(100% - 78px);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin: 24px;
+    align-items: center;
+    gap:12px
 }
 
+.filters {
+    max-width: 400px;
+}
 
 .list {
     grid-column: 2 / span 12;

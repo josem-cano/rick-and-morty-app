@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { UserSession } from "@repo/domain";
 import { AxiosError } from "axios";
@@ -76,6 +76,9 @@ export function Login() {
             />
             <Button type="submit">Log in</Button>
           </div>
+          <Link className={styles.link} to="/register">
+            Sign up
+          </Link>
         </form>
       </div>
     </div>

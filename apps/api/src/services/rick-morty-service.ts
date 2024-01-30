@@ -1,17 +1,19 @@
 import { Character, CharactersPage } from "@repo/domain";
-import { Character as ApiCharacter } from "rickmortyapi/dist/interfaces";
+import {
+  Character as ApiCharacter,
+  CharacterFilter,
+} from "rickmortyapi/dist/interfaces";
 import { In } from "typeorm";
 import { getCharacter, getCharacters } from "rickmortyapi";
-import { FavCharacter } from "../entity/fav-character";
-import { User } from "../entity/user";
+import { FavCharacter, User } from "../entity";
 import { RickAndMortyApiError } from "../utils";
 import datasource from "../config/datasources/datasource";
 
 export const getCharactersWithFav = async (
   user: User,
-  page: number,
+  filters: CharacterFilter,
 ): Promise<CharactersPage> => {
-  const response = await getCharacters({ page });
+  const response = await getCharacters(filters);
   if (response.status !== 200) {
     throw new RickAndMortyApiError(response.status, response.statusMessage);
   }

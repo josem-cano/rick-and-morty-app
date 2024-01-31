@@ -75,7 +75,7 @@ export function Characters() {
                 className={styles.listItem}
                 key={`character-${character.id}`}
               >
-                <Link to={`/characters/${character.id}`}>
+                <Link to={`/character/${character.id}`}>
                   <CharacterCard character={character} />
                 </Link>
               </div>

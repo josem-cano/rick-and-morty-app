@@ -34,7 +34,7 @@ export function Register() {
       .post<UserSession>("/auth/register", data)
       .then((res) => {
         setUserSession(res.data);
-        navigate("/characters");
+        navigate("/");
       })
       .catch((error: AxiosError<{ message: string }>) => {
         setFormError(error.response?.data.message);

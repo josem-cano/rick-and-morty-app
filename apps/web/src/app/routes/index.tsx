@@ -21,11 +21,11 @@ function Routes() {
       errorElement: <NotFound />,
       children: [
         {
-          path: "/characters",
+          path: "/",
           element: <Characters />,
         },
         {
-          path: "/characters/:id",
+          path: "/character/:id",
           element: <CharacterDetail />,
           loader: async ({ params }) => {
             const api = getApi();

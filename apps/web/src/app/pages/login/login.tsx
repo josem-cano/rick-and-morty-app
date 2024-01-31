@@ -30,7 +30,7 @@ export function Login() {
       .post<UserSession>("/auth/login", data)
       .then((res) => {
         setUserSession(res.data);
-        navigate("/characters");
+        navigate("/");
       })
       .catch((error: AxiosError<{ message: string }>) => {
         setFormError(error.response?.data.message);

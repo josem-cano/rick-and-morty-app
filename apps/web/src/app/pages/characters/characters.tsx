@@ -14,7 +14,11 @@ export function Characters() {
   const [charactersPage, setCharactersPage] = useState<CharactersPage>();
   useEffect(() => {
     if (!searchParams.get("page")) {
-      setSearchParams({ page: "1" });
+      setSearchParams((prev) => {
+        // Add the new query param value to the queryString
+        prev.set("page", "1");
+        return prev;
+      });
     }
   }, [searchParams]);
 

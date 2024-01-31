@@ -9,7 +9,7 @@ import { Characters } from "../pages/characters/characters.tsx";
 import { CharacterDetail } from "../pages/characterDetail/characterDetail.tsx";
 import { Register } from "../pages/register/register.tsx";
 import { Login } from "../pages/login/login.tsx";
-import { ProtectedRoute } from "../utils/protectedRoute.tsx";
+import { ProtectedRoute } from "../utils/protected-route.tsx";
 import { getApi } from "../utils/api.ts";
 import { NotFound } from "../pages/notFound/notFound.tsx";
 

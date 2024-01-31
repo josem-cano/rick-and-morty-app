@@ -78,7 +78,7 @@ export function Register() {
                   value:
                     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/,
                   message:
-                    "Password should contain at least one number,one special character, one lowercase letter and one uppercase letter",
+                    "Password must be at least 8 characters and one number,one special character, one lowercase letter and one uppercase letter",
                 },
                 minLength: {
                   value: 8,
@@ -105,6 +105,10 @@ export function Register() {
                 return false;
               }}
             />
+            <p className={styles.hint}>
+              Password should contain at least one number, one special
+              character, one lowercase letter and one uppercase letter
+            </p>
             <Button type="submit">Sign up</Button>
           </div>
         </form>
